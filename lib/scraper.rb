@@ -20,5 +20,7 @@ class Scraper
   def item_container
     parse_page.css(".grid-item-info")
   end
+
+  scraper = Scraper.new
 end
 
