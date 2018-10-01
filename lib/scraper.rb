@@ -8,8 +8,13 @@ class Scraper
     @parse_page ||= Nokogiri::HTML(doc)
   end
 
-  names = item_container.css(".product-name").css("p").children.map {|name| name.text}.compact
-  prices = item_container.css(".product-price").css("span.local").children.map {|price| price.text}.compact
+  def get_names
+    item_container.css(".product-name").css("p").children.map {|name| name.text}.compact
+  end
+
+  def get_prices
+    item_container.css(".product-price").css("span.local").children.map {|price| price.text}.compact
+  end
 
   private
   def item_container
