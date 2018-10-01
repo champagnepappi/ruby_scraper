@@ -9,5 +9,6 @@ class Scraper
   end
 
   names = parse_page.css(".grid-item-info").css(".product-name").css("p").children.map {|name| name.text}.compact
+  prices = parse_page.css(".grid-item-info").css(".product-price").css("span.local").children.map {|price| price.text}.compact
 end
 
