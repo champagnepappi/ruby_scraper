@@ -22,5 +22,7 @@ class Scraper
   end
 
   scraper = Scraper.new
+  prices = scraper.get_prices
+  names = scraper.get_names
 end
 
