@@ -24,5 +24,10 @@ class Scraper
   scraper = Scraper.new
   prices = scraper.get_prices
   names = scraper.get_names
+
+  (0...prices.size).each do |index|
+    puts "--- index: #{index + 1} ---"
+    puts "Name: #{names[index]} | price: #{prices[index]}"
+  end
 end
 
